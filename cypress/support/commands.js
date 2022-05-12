@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('loginViaBackend', () => {
+    cy.request({
+        method: 'POST',
+        url: 'https://cypress-api.vivifyscrum-stage.com/api/v2/login',
+        body: {
+            email: 'dijananestorovic18@gmail.com',
+            password: '12345old',
+            'g-recaptcha-response':""
+            
+        }
+    }).its('body').then(response => {
+        window.localStorage.setItem('token', response.token);
+        window.localStorage.setItem('user', JSON.stringify(response.user));
+        window.localStorage.setItem('user_id', response.user.id);
+    });
+
+})

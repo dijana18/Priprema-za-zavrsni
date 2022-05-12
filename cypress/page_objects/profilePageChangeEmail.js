@@ -9,7 +9,8 @@ class ProfilePageChangeEmail {
     }
 
     get updateEmailBtn() {
-        return cy.get('div[class="vs-u-text--left"]').eq(1)
+        //return cy.get('div[class="vs-u-text--left"]').eq(1)
+        return cy.get('div[class="vs-c-settings-section-wrapper"]').eq(1).find('button')
     }
 
     changeEmail(email, password) {

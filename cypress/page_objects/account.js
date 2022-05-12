@@ -1,5 +1,9 @@
 class Account {
 
+    get profileName () {
+        return cy.get('span[class="vs-c-user-name"]')
+    }
+    
     get userNameBtn () {
         return cy.get('span[class="el-dropdown-link"]')
     }

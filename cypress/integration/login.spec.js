@@ -2,6 +2,8 @@
 import { loginPage } from '../page_objects/loginPage'
 
 describe('login functionality', () => {
+    let email = 'dijananestorovic18@gmail.com',
+        password = '12345old'
 
     before('visit login page', () => {
         cy.visit('/login');
@@ -15,7 +17,7 @@ describe('login functionality', () => {
             url: 'https://cypress-api.vivifyscrum-stage.com/api/v2/login'
         }).as('successfullogin');
 
-        loginPage.login('dijananestorovic18@gmail.com', '12345')
+        loginPage.login(email, password)
 
         cy.wait('@successfullogin').then(interception => {
             console.log('RESPONSE', interception)

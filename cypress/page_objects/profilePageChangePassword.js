@@ -13,7 +13,8 @@ class ProfilePageChangePassword {
     }
 
     get updatePasswordBtn() {
-        return cy.get ('div[class="vs-u-text--left"]').eq(2)
+        //return cy.get ('div[class="vs-u-text--left"]').eq(2)
+        return cy.get('div[class="vs-c-settings-section-wrapper"]').eq(2).find('button')
     }
 
     changePassword(currentPass, newPass){

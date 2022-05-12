@@ -13,7 +13,7 @@ class ProfilePagePersonalInfo {
     }
 
     get updatePersonalInfoBtn() {
-        return cy.get('div[class="vs-u-text--left"]').eq(0)
+        return cy.get('div[class="vs-c-settings-section-wrapper"]').eq(0).find('button')
     }
 
     updatePersonalInfo(firstName, lastName){
